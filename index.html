@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./weather.css">
+    <link rel="stylesheet" href="weather-icons-wind.min.css">
+    <link rel="stylesheet" href="weather-icons.css">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- search bar and city name -->
+      <section class="mx-3 pt-2">
+        <div class="row">
+            <div class="col">
+                <h1 class="h1">Weather App</h1>
+            </div>
+            <div class="col-8">
+                <form class="row mt-2" id="search-form">
+                    <div class="col-9"><input
+                        type="text"
+                        id="search-input"
+                        aria-describedby="searchCity"
+                        placeholder="Enter a city name to check the weather..."
+                        class="form-control bg-light rounded"
+                        autocomplete="off" /></div>
+                   <div class="col-3"> <button type="submit" class="col" >Search</button></div>
+                  </form>
+            </div>
+        </div>
+    </section>
+    
+     
+
+      <!-- temp and day info -->
+      <div class="card " style="padding: 0;">
+        <div class="top">
+            <h3>
+                <span class="material-icons-sharp">
+                    location_on
+                </span>
+                <span class="location"   id="searched-city" style="color: white;font-size: large;">Location</span>
+            </h3>
+            &nbsp;&nbsp;&nbsp;
+            <p id="date" style="color: white; text-align:right; width:100%;">Time</p>
+        </div>
+        <div class="body">
+            <div style=" display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <h1 style="margin-left: 20px;">
+                    <span style="font-size: 4rem; text-align:center; color:#444a79" id="current-temperature">0</span>
+                </h1>
+                <h3 id="weather-type">Mostly Cloudy</h3>
+                <div style="font-weight: 600;">
+                    <span>Day <span id="max-temperature">MAX_Temp</span><sup style="font-size: xx-small; color:var(--color-primary);"></sup></span>
+                    <span>Night <span id="min-temperature">MIN_Temp</span><sup style="font-size: xx-small; color:var(--color-primary);">&#x2103;</sup></span>
+                </div>
+            </div>
+            <div class="large-icon">
+                <img src="./image/foggy.png" alt="foggy weather" width="150px" style="width: 150px;">
+            </div>
+        </div>
+    </div>
+    <h2 style="text-align: center;">Weather Today in <span class="location">Location</span></h2>
+            <div class="today-weather">
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-rain"></span>
+                    </span>
+                    <h6>Rain</h6>
+                    <span id="rain">No Data :(</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-celsius"></span>
+                    </span>
+                    <h6>Feels Like</h6>
+                    <span id="feel">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-wind-direction"></span>
+                    </span>
+                    <h6>Wind Direction</h6>
+                    <span id="wind-direction">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-windy"></span>
+                    </span>
+                    <h6>Wind Speed</h6>
+                    <span id="wind">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-sunrise"></span>
+                    </span>
+                    <h6>Sun Rise</h6>
+                    <span id="sunrise">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-sunset"></span>
+                    </span>
+                    <h6>Sunset</h6>
+                    <span id="sunset">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-small-craft-advisory"></span>
+                    </span>
+                    <h6>Visibility</h6>
+                    <span id="visibility">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span><span class="wi wi-barometer"></span>
+                    </span>
+                    <h6>Pressure</h6>
+                    <span id="pressure">0000</span>
+                </div>
+                <div class="grid-item">
+                    <span>
+                        <span class="wi wi-humidity"></span>
+                    </span>
+                    <h6>Humidity</h6>
+                    <span id="humidity">0000</span>
+                </div>
+            </div>
+     
+    </main>
+    <script src="./location.js"></script>
+  </body>
+</html>
